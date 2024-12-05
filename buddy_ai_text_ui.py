@@ -1,6 +1,6 @@
 import google.generativeai as genai
 
-genai.configure(api_key="AIzaSyASSatnQXQu-wI1e7EKezEHZLovvZrY-Ng")
+genai.configure(api_key="api-key")
 model_name = "gemini-1.5-pro-latest"
 generation_config = {"temperature": 0.5, "top_p": 0.95, "top_k": 0, "max_output_tokens": 500}
 model = genai.GenerativeModel(model_name=model_name, generation_config=generation_config)
