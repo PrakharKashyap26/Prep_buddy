@@ -1,7 +1,7 @@
 import csv
 import google.generativeai as genai
 
-genai.configure(api_key="AIzaSyASSatnQXQu-wI1e7EKezEHZLovvZrY-Ng")
+genai.configure(api_key="api-key")
 generation_config = {
     "temperature": 0.5,
     "top_p": 0.95,
@@ -22,7 +22,7 @@ def ask_and_evaluate(question, filename="progress.csv"):
     user_answer = input("Your answer: ")
 
     # Ask the AI to evaluate the answer
-    evaluation_prompt = f"Evaluate the following answer to the question: {question}\n\nAnswer: {user_answer}\n\nRate the answer on a scale of 1-10 and provide feedback for improvement."
+    evaluation_prompt = f"Evaluate the following answer to the question: {question}\n\nAnswer: {user_answer}\n\nRate the answer on a scale of 1-10."
     evaluation = get_response(evaluation_prompt)
 
     # Extract the score from the evaluation
