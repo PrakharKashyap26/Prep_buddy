@@ -14,7 +14,7 @@ except ValueError:
 
 if x == 1:
     try:
-        genai.configure(api_key="AIzaSyASSatnQXQu-wI1e7EKezEHZLovvZrY-Ng")
+        genai.configure(api_key="apikey")
         model_name = "gemini-1.5-pro-latest"
         generation_config = {"temperature": 0.5, "top_p": 0.95, "top_k": 0, "max_output_tokens": 50}
         model = genai.GenerativeModel(model_name=model_name, generation_config=generation_config)
@@ -27,7 +27,6 @@ if x == 1:
 
         print("Hello! I'm ready to assist you. How can I help today?")
         engine = pyttsx3.init()
-        #engine.setProperty("voice", )
         engine.say("Hello! I'm ready to assist you. How can I help today?")
         engine.runAndWait()
 
@@ -55,7 +54,7 @@ if x == 1:
 
 elif x == 2:
     try:
-        genai.configure(api_key="AIzaSyASSatnQXQu-wI1e7EKezEHZLovvZrY-Ng")
+        genai.configure(api_key="apikey")
         generation_config = {
             "temperature": 0.5,
             "top_p": 0.95,
@@ -118,8 +117,8 @@ elif x == 3:
         def recommend_resources():
             skill = input("Enter your skill (e.g., python, data science, web development): ").strip().lower()
     
-            api_key = 'AIzaSyC32bZZJZCcCzxYQ78dP2sDX-9-S2Fjmuw'  # Replace with your API key
-            cx = '46a1526f67d934c6c'  # Replace with your Custom Search Engine ID
+            api_key = 'apikey'  # Replace with your API key
+            cx = 'search engine id'  # Replace with your Custom Search Engine ID
             url = 'https://www.googleapis.com/customsearch/v1'
             params = {'key': api_key, 'cx': cx, 'q': f"online courses {skill}"}
 
@@ -143,7 +142,7 @@ elif x == 3:
 
 elif x == 4:
     try:
-        genai.configure(api_key="AIzaSyASSatnQXQu-wI1e7EKezEHZLovvZrY-Ng")
+        genai.configure(api_key="apikey")
         generation_config = {
             "temperature": 0.5,
             "top_p": 0.95,
@@ -189,8 +188,6 @@ elif x == 4:
         while True:
             level = input("What is you current skill level?\n")
             topic = input("What topic would you like to learn about?\n")
-            #prompt = f"Generate 10 questions to test knowledge on {topic}, given that my current skill level is {level}.\n"
-            #prompt = f"You are an expert MCQ generator and evaluator for educational purposes. Generate 10 multiple-choice questions (MCQs) based on the topic specified below for the {level} level. For each question: 1. Provide the question in clear, concise language. 2. Offer 4 distinct answer options (labeled A, B, C, D). Ensure only one of the options is correct. 3. After each question, rate a user's selected answer on a scale of 0 to 10, where: 10 indicates a completely correct and confident answer. Scores between 1-9 are based on partial correctness or reasoning errors. 0 indicates a completely incorrect answer. Topic: {topic}.Example Format: 1. Question 1: [Insert question here], A. [Option A], B. [Option B], C. [Option C], D. [Option D],User's Answer: [Insert user's answer here],Rating: [Score from 0 to 10],Explanation: [Provide an explanation for the score.],Generate this list with professionalism, focusing on accuracy, engagement, and appropriate difficulty."
             prompt = f"Generate 10 multiple-choice questions (MCQs) based on the topic {topic} for a {level} level. Each question should have 4 options (A, B, C, D) and only one correct answer.\n"
             questions = get_response(prompt).split('\n')
 
