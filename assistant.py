@@ -1,7 +1,7 @@
 from google import genai
 
 def ai_reply(user_input):
-    client = genai.Client(api_key="AIzaSyAl9EpOEnsqQ7NJJldrDpI_b2W_PXOHWIU")
+    client = genai.Client(api_key="api")
 
     predefined_prompt = """you are buddy, 
     an ai assistant that helps students when they are stuck in any academic doubt, 

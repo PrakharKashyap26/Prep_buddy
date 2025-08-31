@@ -1,7 +1,7 @@
 import requests
 
-API_KEY = 'AIzaSyCEl8I3lOftyn966djQicsEXUBQuGKs0Vs'
-CSE_ID = '73c8fbdb27a1442b0'
+API_KEY = 'api_key'
+CSE_ID = 'cse_id'
 
 def recommend_resources(skill):
     url = f"https://www.googleapis.com/customsearch/v1"
